@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom'
 import {useDispatch, useSelector} from "react-redux"
 import { useAlert } from 'react-alert';
 import { userRegister } from '../store/actions/authAction';
+export const SUCCESS_MESSAGE_CLEAR = 'SUCCESS_MESSAGE_CLEAR'
+export const ERROR_CLEAR = 'ERROR_CLEAR'
 
 const Register = () => {
+    const navigate = useNavigate();
     const alert = useAlert();
 
     const {loading,authenticate,error,successMessage,myInfo} = useSelector(state=>state.auth);
@@ -55,6 +58,21 @@ const Register = () => {
             [e.target.name]: e.target.value
         })
     }
+
+    useEffect(()=>{
+        if(authenticate){
+             navigate('/');
+        }
+        if(successMessage){
+             alert.success(successMessage);
+             dispatch({type : SUCCESS_MESSAGE_CLEAR })
+        }
+        if(error){
+             error.map(err=>alert.error(err));
+             dispatch({type : ERROR_CLEAR })
+        }
+
+   },[successMessage,error])
 
     return (
         <div className="register">

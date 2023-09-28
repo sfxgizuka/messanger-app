@@ -2,6 +2,10 @@
 import deCodeToken from 'jwt-decode';
 const REGISTER_FAIL = 'REGISTER_FAIL'
 const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
+export const SUCCESS_MESSAGE_CLEAR = 'SUCCESS_MESSAGE_CLEAR'
+export const ERROR_CLEAR = 'ERROR_CLEAR'
+export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS'
+export const USER_LOGIN_FAIL = 'USER_LOGIN_FAIL'
 
 const authState = {
      loading : true,
@@ -21,10 +25,21 @@ const tokenDecode = (token) =>{
 
 }
 
+const getToken = localStorage.getItem('authToken');
+if(getToken){
+     const getInfo = tokenDecode(getToken);
+     if(getInfo){
+          authState.myInfo = getInfo;
+          authState.authenticate = true;
+          authState.loading = false;
+     }
+}
+console.log(getToken);
+
 export const authReducer = (state = authState, action) => {
     const {payload,type} = action;
 
-    if(type === REGISTER_FAIL){
+    if(type === REGISTER_FAIL || type === USER_LOGIN_FAIL){
          return {
               ...state,
               error : payload.error,
@@ -33,7 +48,7 @@ export const authReducer = (state = authState, action) => {
               loading : true
          }
     }
-    if(type === REGISTER_SUCCESS){
+    if(type === REGISTER_SUCCESS || type === USER_LOGIN_SUCCESS){
         const myInfo = tokenDecode(payload.token);
         return{
              ...state,
@@ -46,6 +61,19 @@ export const authReducer = (state = authState, action) => {
         }
 
    } 
+   if(type === SUCCESS_MESSAGE_CLEAR){
+     return {
+          ...state,
+          successMessage : ''
+     }
+}
+
+if(type === ERROR_CLEAR){
+     return {
+          ...state,
+          error : ''
+     }
+}
 
 
 
