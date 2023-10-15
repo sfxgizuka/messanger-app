@@ -1,7 +1,5 @@
-// import { REGISTER_FAIL } from "../types/authTypes";
+import { REGISTER_FAIL, REGISTER_SUCCESS } from "../types/authTypes";
 import deCodeToken from 'jwt-decode';
-const REGISTER_FAIL = 'REGISTER_FAIL'
-const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const SUCCESS_MESSAGE_CLEAR = 'SUCCESS_MESSAGE_CLEAR'
 export const ERROR_CLEAR = 'ERROR_CLEAR'
 export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS'

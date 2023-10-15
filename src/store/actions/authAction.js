@@ -44,7 +44,9 @@ export const userLogin = (data) => {
           const config = {
                headers: {
                     'Content-Type':'application/json'
-               } 
+               },
+               withCredentials: true,
+               credentials: 'include'
           }
           try{
                const response = await axios.post('http://localhost:5000/api/messenger/user-login',data,config);
