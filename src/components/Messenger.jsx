@@ -4,7 +4,7 @@ import ActiveFriend from './ActiveFriend';
 import Friends from './Friends';
 import RightSide from './RightSide';
 import {useDispatch, useSelector} from 'react-redux';
-import { getFriends } from '../store/actions/messangerAction';
+import { getFriends, messageSend } from '../store/actions/messangerAction';
 
 const Messenger = () => {
      const {friends} = useSelector(state => state.messenger );
@@ -19,7 +19,12 @@ const Messenger = () => {
 
  const sendMessage = (e) => {
      e.preventDefault();
-     console.log(newMessage);
+     const data = {
+          senderName : myInfo.userName,
+          receiverId : currentfriend._id,
+          message : newMessage ? newMessage : '❤'
+     }
+     dispatch(messageSend(data));
 
  }
      const dispatch = useDispatch();
