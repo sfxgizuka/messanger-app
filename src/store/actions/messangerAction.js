@@ -3,7 +3,7 @@ import {FRIEND_GET_SUCCESS} from "../types/messengerType";
 
 export const getFriends = () => async(dispatch) => {
      try{
-          const response = await axios.get('http://localhost:5000/api/messenger/get-friends',{
+          const response = await axios.get('http://localhost:4000/api/messenger/get-friends',{
                 withCredentials: true,
                credentials: 'include'
           });

@@ -49,7 +49,7 @@ export const userLogin = (data) => {
                credentials: 'include'
           }
           try{
-               const response = await axios.post('http://localhost:5000/api/messenger/user-login',data,config);
+               const response = await axios.post('http://localhost:4000/api/messenger/user-login',data,config);
                localStorage.setItem('authToken',response.data.token);
 
                dispatch({
