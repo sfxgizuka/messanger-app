@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { getFriends, messageSend, getMessage } from '../store/actions/messangerAction';
 
 const Messenger = () => {
-     const {friends} = useSelector(state => state.messenger );
+     const {friends, message} = useSelector(state => state.messenger );
      const {myInfo} = useSelector(state => state.auth);
      const [currentfriend, setCurrentFriend] = useState('');
      const [newMessage, setNewMessage] = useState('');
@@ -96,6 +96,7 @@ const Messenger = () => {
                     inputHendle={inputHendle}
                     newMessage={newMessage}
                     sendMessage={sendMessage}
+                    message={message}
                     /> : 'Please Select your Friend'
                }
             </div>
