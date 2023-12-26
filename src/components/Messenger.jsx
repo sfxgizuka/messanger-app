@@ -1,4 +1,4 @@
-import React,{ useEffect,useState }  from 'react';
+import React,{ useEffect, useState, useRef }  from 'react';
 import { FaEllipsisH,FaEdit,FaSistrix } from "react-icons/fa";
 import ActiveFriend from './ActiveFriend';
 import Friends from './Friends';
@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { getFriends, messageSend, getMessage } from '../store/actions/messangerAction';
 
 const Messenger = () => {
+     const scrollRef = useRef();
      const {friends, message} = useSelector(state => state.messenger );
      const {myInfo} = useSelector(state => state.auth);
      const [currentfriend, setCurrentFriend] = useState('');
@@ -41,6 +42,9 @@ const Messenger = () => {
       useEffect(() => {
           dispatch(getMessage(currentfriend._id))
       },[ currentfriend?._id]);
+      useEffect(() => {
+          scrollRef.current?.scrollIntoView({behavior: 'smooth'}) 
+      },[ message]);
 
   return (
        <div className='messenger'>
