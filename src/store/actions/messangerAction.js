@@ -54,3 +54,6 @@ export const messageSend = (data) => async(dispatch) => {
           }
      }
 }
+export const ImageMessageSend = (data) => async(dispatch)=>{
+
+}

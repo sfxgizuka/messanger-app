@@ -21,7 +21,7 @@ const Message = ({message,currentfriend, scrollRef}) => {
                    <img src={`./image/${currentfriend.image}`} alt='' />
                    <div className='message-time'>
                         <div className='fd-text'>
-               <p className='message-text'>{m.message.text} </p>
+                              <p className='message-text'>{m.message.text} </p>
                         </div>
                         <div className='time'>
                                 3 Jan 2022             
