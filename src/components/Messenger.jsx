@@ -30,8 +30,8 @@ const ImageSend = (e) => {
           const formData = new FormData();
 
           formData.append('senderName',myInfo.userName);
-          formData.append('imagename',newImageName);
-          formData.append('reseverId',currentfriend._id);
+          formData.append('imageName',newImageName);
+          formData.append('receiverId',currentfriend._id);
           formData.append('image', e.target.files[0]);
           dispatch(ImageMessageSend(formData));
 

@@ -56,7 +56,10 @@ export const messageSend = (data) => async(dispatch) => {
 }
 export const ImageMessageSend = (data) => async(dispatch)=>{
      try{
-          const response = await axios.post('/api/messenger/image-message-send',data);
+          const response = await axios.post('http://localhost:4000/api/messenger/image-message-send',data,{
+               withCredentials: true,
+              credentials: 'include'
+         });
           console.log(response.data);
      }catch (error){
           console.log(error.response.data);
