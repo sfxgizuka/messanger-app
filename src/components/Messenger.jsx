@@ -25,7 +25,8 @@ const ImageSend = (e) => {
 
      if(e.target.files.length !== 0){
           const imagename = e.target.files[0].name;
-          const newImageName = Date.now() + imagename;
+          // const newImageName = Date.now() + imagename;
+          const newImageName =  imagename;
 
           const formData = new FormData();
 
@@ -76,7 +77,7 @@ const ImageSend = (e) => {
                <div className='top'>
                     <div className='image-name'>
                          <div className='image'>
-                              <img src={`./image/${myInfo.image}`}  alt='' />
+                              <img src={`http://localhost:4000/api/images/${myInfo.image}`}  alt='' />
                          </div>
                          <div className='name'>
                          <h3> Hi {myInfo.userName} </h3>

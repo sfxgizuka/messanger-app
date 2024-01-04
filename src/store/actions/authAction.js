@@ -11,10 +11,12 @@ export const userRegister = (data) => {
           const config = {
                headers: {
                     'Content-Type':'application/josn'
-               }
+               },
+               withCredentials: true,
+               credentials: 'include'
           }
           try{
-               const response = await axios.post('http://localhost:5000/api/messenger/user-register',data,config);
+               const response = await axios.post('http://localhost:4000/api/messenger/user-register',data,config);
                console.log(response.data);
                localStorage.setItem('authToken',response.data.token);
 

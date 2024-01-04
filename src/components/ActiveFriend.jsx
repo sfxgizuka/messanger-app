@@ -5,61 +5,17 @@ const ActiveFriend = () => {
        <div className='active-friend'>
             <div className='image-active-icon'>
                  <div className='image'>
-                 <img src='/image/20003ariyan.jpg' alt='' />
+                 <img src='/image/beach.png' alt='' />
                     <div className='active-icon'></div>
                  </div>
 
                  <div className='image'>
-                 <img src='/image/20003ariyan.jpg' alt='' />
+                 <img src='/image/anime.jpeg' alt='' />
                     <div className='active-icon'></div>
                  </div>
 
                  <div className='image'>
-                 <img src='/image/20003ariyan.jpg' alt='' />
-                    <div className='active-icon'></div>
-                 </div>
-
-                 <div className='image'>
-                 <img src='/image/20003ariyan.jpg' alt='' />
-                    <div className='active-icon'></div>
-                 </div>
-
-
-                 <div className='image'>
-                 <img src='/image/20003ariyan.jpg' alt='' />
-                    <div className='active-icon'></div>
-                 </div>
-
-                 <div className='image'>
-                 <img src='/image/20003ariyan.jpg' alt='' />
-                    <div className='active-icon'></div>
-                 </div>
-                 <div className='image'>
-                 <img src='/image/20003ariyan.jpg' alt='' />
-                    <div className='active-icon'></div>
-                 </div>
-                 <div className='image'>
-                 <img src='/image/20003ariyan.jpg' alt='' />
-                    <div className='active-icon'></div>
-                 </div>
-                 <div className='image'>
-                 <img src='/image/20003ariyan.jpg' alt='' />
-                    <div className='active-icon'></div>
-                 </div>
-                 <div className='image'>
-                 <img src='/image/20003ariyan.jpg' alt='' />
-                    <div className='active-icon'></div>
-                 </div>
-                 <div className='image'>
-                 <img src='/image/20003ariyan.jpg' alt='' />
-                    <div className='active-icon'></div>
-                 </div>
-                 <div className='image'>
-                 <img src='/image/20003ariyan.jpg' alt='' />
-                    <div className='active-icon'></div>
-                 </div>
-                 <div className='image'>
-                 <img src='/image/20003ariyan.jpg' alt='' />
+                 <img src='/image/snow.jpeg' alt='' />
                     <div className='active-icon'></div>
                  </div>
 

@@ -18,7 +18,7 @@ const RightSide = (props) => {
                <div className='header'>
                     <div className='image-name'>
                          <div className='image'>
-                         <img src={`./image/${currentfriend.image}`}  alt='' />
+                         <img src={`http://localhost:4000/api/images/${currentfriend.image}`}  alt='' />
 
                          </div>
                          <div className='name'>

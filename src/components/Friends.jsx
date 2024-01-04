@@ -5,7 +5,7 @@ const Friends = ({friend}) => {
        <div className='friend'>
             <div className='friend-image'>
                  <div className='image'>
-                 <img src={`./image/${friend.image}`}  alt='' />
+                 <img src={`http://localhost:4000/api/images/${friend.image}`}  alt='' />
                  </div>
             </div>
 
